@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>見やすいカレンダー - 大きな文字で見やすい予定・スケジュール管理</title>
+  <meta name="description" content="大きな文字で見やすいシンプルなカレンダーアプリ。予定の登録・通知・完了管理を直感的な操作で。老若男女に使いやすい設計。">
+  <style>
+    :root {
+      --primary: #E8821C;
+      --bg: #FAF7F1;
+      --text: #2A2218;
+      --muted: #6B5C45;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Hiragino Sans', sans-serif; }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #E8DDC4;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img { width: 40px; height: 40px; border-radius: 10px; }
+    header span { font-size: 18px; font-weight: 700; }
+
+    .hero {
+      text-align: center;
+      padding: 72px 24px 56px;
+    }
+    .hero img {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+    .store-btn {
+      display: inline-block;
+      background: var(--text);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .store-btn:hover { opacity: 0.8; }
+
+    .features {
+      padding: 56px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #E8DDC4;
+    }
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 56px 24px;
+      background: var(--primary);
+      color: var(--white);
+    }
+    .cta h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    .cta p { font-size: 16px; margin-bottom: 28px; opacity: 0.9; }
+    .cta a {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="icon.png" alt="見やすいカレンダー">
+  <span>見やすいカレンダー</span>
+</header>
+
+<section class="hero">
+  <img src="icon.png" alt="見やすいカレンダーアイコン">
+  <h1>大きな文字で<br>見やすいカレンダー</h1>
+  <p>大きな文字・シンプルな操作で、<br>誰でも使いやすいスケジュール管理アプリです。</p>
+  <a href="https://apps.apple.com/jp/app/id0000000000" class="store-btn">App Store でダウンロード</a>
+</section>
+
+<section class="features">
+  <h2>主な機能</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>きょうの予定</h3>
+      <p>今日の予定を大きな文字でひとめで確認。アイコンをタップして完了マークをつけられます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📆</div>
+      <h3>1か月の予定</h3>
+      <p>月ごとの予定を縦にスクロールして確認。日付ジャンプで見たい日にすぐ移動できます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔔</div>
+      <h3>通知でお知らせ</h3>
+      <p>予定の時間が近づいたら通知でお知らせ。1時間前・15分前など好みのタイミングに設定できます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔡</div>
+      <h3>文字サイズ調整</h3>
+      <p>5段階の文字サイズから選べます。見やすいサイズをはじめに設定するだけで完了。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏥</div>
+      <h3>充実したカテゴリ</h3>
+      <p>通院・お薬・買い物・美容院など25種類のカテゴリ。アイコンの色で一目で区別できます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>プライバシー重視</h3>
+      <p>データはすべて端末内に保管。インターネットへの送信は一切ありません。</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>無料でダウンロード</h2>
+  <p>App Store から今すぐダウンロードできます</p>
+  <a href="https://apps.apple.com/jp/app/id0000000000">App Store で入手</a>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="mailto:taku.app.dev@gmail.com">お問い合わせ</a>
+  </div>
+  <p>© 2026 見やすいカレンダー. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
